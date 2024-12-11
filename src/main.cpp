@@ -96,6 +96,28 @@ bool test_body_size_3()
     return candle.body_size() == 5; // должно быть 5.0
 }
 
+// Тесты для метода is_red 
+bool test_is_red_1()
+{
+    std::cout << " test_is_red_1";
+    Candle candle{ 10.0, 10.0, 4.0, 5.0 };
+    return candle.is_red(); // должно быть true
+}
+
+bool test_is_red_2()
+{
+    std::cout << " test_is_red_2";
+    Candle candle{ 5.0, 10.0, 4.0, 10.0 };
+    return !candle.is_red(); // должно быть false
+}
+
+bool test_is_red_3()
+{
+    std::cout << " test_is_red_3";
+    Candle candle{ 5.0, 10.0, 4.0, 5.0 };
+    return !candle.is_red(); // должно быть false 
+}
+
 void initTests()
 {
     // Тесты для body_contains
@@ -117,6 +139,11 @@ void initTests()
     tests.push_back(test_body_size_1);
     tests.push_back(test_body_size_2);
     tests.push_back(test_body_size_3);
+
+    // Тесты для  is_red
+    tests.push_back(test_is_red_1);
+    tests.push_back(test_is_red_2);
+    tests.push_back(test_is_red_3);
 }
 
 int launchTests()
