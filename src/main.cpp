@@ -29,7 +29,27 @@ bool test_body_contains_3()
     return !candle.body_contains(11.0); // должно быть false
 }
 
+// Тесты для метода contains
+bool test_contains_1()
+{
+    std::cout << " test_contains_1";
+    Candle candle{ 5.0, 10.0, 4.0, 10.0 };
+    return candle.contains(6.0); // должно быть true
+}
 
+bool test_contains_2()
+{
+    std::cout << " test_contains_2";
+    Candle candle{ 5.0, 10.0, 4.0, 10.0 };
+    return !candle.contains(11.0); // должно быть false
+}
+
+bool test_contains_3()
+{
+    std::cout << " test_contains_3";
+    Candle candle{ 5.0, 10.0, 4.0, 10.0 };
+    return !candle.contains(3.0); // должно быть false
+}
 
 void initTests()
 {
@@ -38,6 +58,10 @@ void initTests()
     tests.push_back(test_body_contains_2);
     tests.push_back(test_body_contains_3);
 
+    // Тесты для contains
+    tests.push_back(test_contains_1);
+    tests.push_back(test_contains_2);
+    tests.push_back(test_contains_3);
    
 
 }
