@@ -74,6 +74,27 @@ bool test_full_size_3()
     return candle.full_size() == 6; // должно быть 6.0
 }
 
+// Тесты для метода body_size
+bool test_body_size_1()
+{
+    std::cout << " test_body_size_1";
+    Candle candle{ 10.0, 10.0, 4.0, 5.0 };
+    return candle.body_size() == 5; // должно быть 5.0
+}
+
+bool test_body_size_2()
+{
+    std::cout << " test_body_size_2";
+    Candle candle{ 5.0, 10.0, 4.0, 5.0 };
+    return candle.body_size() == 0; // должно быть 0.0
+}
+
+bool test_body_size_3()
+{
+    std::cout << " test_body_size_3";
+    Candle candle{ 5.0, 5.0, 5.0, 10.0 };
+    return candle.body_size() == 5; // должно быть 5.0
+}
 
 void initTests()
 {
@@ -92,6 +113,10 @@ void initTests()
     tests.push_back(test_full_size_2);
     tests.push_back(test_full_size_3);
 
+    // Тесты для body_size
+    tests.push_back(test_body_size_1);
+    tests.push_back(test_body_size_2);
+    tests.push_back(test_body_size_3);
 }
 
 int launchTests()
