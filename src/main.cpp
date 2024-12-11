@@ -51,6 +51,30 @@ bool test_contains_3()
     return !candle.contains(3.0); // должно быть false
 }
 
+
+// Тесты для метода full_size
+bool test_full_size_1()
+{
+    std::cout << " test_full_size_1";
+    Candle candle{ 5.0, 10.0, 4.0, 7.0 };
+    return candle.full_size() == 6; // должно быть 6.0
+}
+
+bool test_full_size_2()
+{
+    std::cout << " test_full_size_2";
+    Candle candle{ 5.0, 5.0, 5.0, 5.0 };
+    return candle.full_size() == 0; // должно быть 0.0
+}
+
+bool test_full_size_3()
+{
+    std::cout << " test_full_size_3";
+    Candle candle{ 10.0, 4.0, 10.0, 7.0 };
+    return candle.full_size() == 6; // должно быть 6.0
+}
+
+
 void initTests()
 {
     // Тесты для body_contains
@@ -63,6 +87,10 @@ void initTests()
     tests.push_back(test_contains_2);
     tests.push_back(test_contains_3);
    
+    // Тесты для full_size
+    tests.push_back(test_full_size_1);
+    tests.push_back(test_full_size_2);
+    tests.push_back(test_full_size_3);
 
 }
 
